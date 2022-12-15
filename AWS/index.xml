@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on lin Blog Site</title>
+    <link>https://saberMomo.github.io/aws/</link>
+    <description>Recent content in AWS on lin Blog Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Dec 2022 09:45:35 +0800</lastBuildDate><atom:link href="https://saberMomo.github.io/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VPC</title>
+      <link>https://saberMomo.github.io/AWS/VPC/</link>
+      <pubDate>Thu, 15 Dec 2022 09:45:35 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/AWS/VPC/</guid>
+      <description> Amazon VPC 是什么 通过 Amazon Virtual Private Cloud (Amazon VPC)，可以将 AWS 资源启动到定义的虚拟网络中。这个虚拟网络与在数据中心中运行的传统网络极其相似，并会提供使用的可扩展基础设施的优势
+功能 Virtual Private Cloud (VPC)：VPC 是一个虚拟网络，与您在自己的数据中心中运行的传统网络极为相似。创建 VPC 后，您可以添加子网。 子网： 子网是您的 VPC 内的 IP 地址范围。子网必须位于单个可用区中。在添加子网后，您可以在 VPC 中部署 AWS 资源。 IP 寻址： 您可以将 IPv4 地址和 IPv6 地址分配到 VPC 和子网。您还可以将您的公有 IPv4 和 IPv6 GUA 地址带到 AWS 并将其分配到 VPC 中的资源，例如 EC2 实例、NAT 网关和网络负载均衡器。 路由：使用路由表决定将来自您的子网或网关的网络流量定向到何处。 网关和端点：网关将您的 VPC 连到其他网络。例如，使用互联网网关将您的 VPC 连接到网络。使用 VPC 端点私下连接到 AWS 服务，无需使用互联网网关或 NAT 设备。 对等连接：使用 VPC 对等连接在两个 VPC 中的资源之间路由流量。 流量镜像：从网络接口复制网络流量，然后将其发送到安全和监控设备进行深度数据包检查。 中转网关：将中转网关用作中央枢纽，以在 VPC、VPN 连接和 AWS Direct Connect 连接之间路由流量。 VPC 流日志：流日志捕获有关在 VPC 中传入和传出网络接口的 IP 流量的信息。 VPN 连接：使用 AWS Virtual Private Network (AWS VPN) 将 VPC 连接到您的本地网络。 </description>
+    </item>
+    
+    <item>
+      <title>AWS Organizations</title>
+      <link>https://saberMomo.github.io/AWS/Organizations/</link>
+      <pubDate>Wed, 14 Dec 2022 23:35:41 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/AWS/Organizations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAM</title>
+      <link>https://saberMomo.github.io/AWS/IAM/</link>
+      <pubDate>Wed, 14 Dec 2022 23:13:23 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/AWS/IAM/</guid>
+      <description>什么是IAM AWS Identity and Access Management (IAM) 是一种 Web 服务，可以安全地控制对AWS资源的访问。
+AWS 账户根用户是创建AWS 账户时创建的。建议不要使用跟用户执行日常AWS操作
+IAM 功能 可多人共享操作AWS 资源，创建单独的IAM role可以不必共享自己的登陆信息 精细权限管理 可以针对不同资源向不同人员授予不同权限 给Amazon EC2上运行的应用程序提供AWS资源的安全访问权限 多重身份验证（MFA） 可以给账户天假双重身份验证，以实现更高安全性。 联合登陆（联合身份） 可以允许在其他用户管理系统中提供的用户获取AWS账户的临时访问权限 身份信息可在AWS CloudTrail中记录 如果使用AWS CLoudTrail，则会收到对资源进行请求的人员信息 &amp;hellip; 使用IAM操作AWS资源 AWS Management Console 页面登录 AWS CLI操作 首先需要登陆AWS，使用aws configure, 参考链接 术语 IAM 资源： 存储在 IAM 中的用户、组、角色、策略和身份提供商对象。与其他 AWS 服务一样，可以在 IAM 中添加、编辑和删除资源。 IAM 身份： 用于标识和分组的 IAM 资源对象。可以将策略附加到 IAM 身份。其中包括用户、组和角色。 IAM 实体： AWS 用于进行身份验证的 IAM 资源对象。其中包括 IAM 用户和角色。 主体： 可请求对 AWS 资源执行操作的人员或应用程序。 IAM 中的权限和策略 IAM 用户是服务中的身份。当创建 IAM 用户时，他们无法访问账户中的任何资源，需要给他们授予权限。向用户授予权限的方法是创建基于身份的策略，附加到用户或用户所属组的策略。</description>
+    </item>
+    
+  </channel>
+</rss>

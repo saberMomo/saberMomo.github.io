@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://saberMomo.github.io/aws/</loc>
+    <lastmod>2022-12-15T09:45:35+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/</loc>
+    <lastmod>2022-12-15T09:45:35+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/AWS/VPC/</loc>
+    <lastmod>2022-12-15T09:45:35+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/AWS/Organizations/</loc>
+    <lastmod>2022-12-14T23:35:41+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/AWS/IAM/</loc>
+    <lastmod>2022-12-14T23:13:23+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/istio/</loc>
+    <lastmod>2022-12-14T09:25:58+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/istio/readme/</loc>
+    <lastmod>2022-12-14T09:25:58+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/tags/</loc>
+  </url>
+</urlset>
