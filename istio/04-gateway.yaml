@@ -1,0 +1,88 @@
+# kubectl apply -f 04-gateway.yaml
+# curl -H "Host:qwe.asd.com"  "http://192.168.59.101:31475/v1"  # 替换ingress 80的nodeport端口
+# kubectl delete -f 04-gateway.yaml
+# gateway 
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  annotations:
+  labels:
+    istio: ingressgateway
+  name: demo-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - qwe.asd.com
+    port:
+      name: http-digital
+      number: 80
+      protocol: HTTP
+---
+# virtual service -- simple
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: reviews-route
+  namespace: lin-test
+spec:
+  gateways:
+  - istio-system/demo-gateway
+  hosts:
+  - qwe.asd.com
+  http:
+  - match:
+    - uri:
+        prefix: /v1
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: nginx.lin-test.svc.cluster.local
+        port:
+          number: 80
+---
+# nginx
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlb-sample-app
+  namespace: lin-test
+spec:
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 400%
+      maxUnavailable: 0
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: public.ecr.aws/nginx/nginx:1.21
+          ports:
+            - name: tcp
+              containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: lin-test
+  name: nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: nginx

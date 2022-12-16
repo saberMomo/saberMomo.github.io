@@ -12,8 +12,10 @@
 <meta name="generator" content="Hugo 0.108.0">
 
 
+  <meta name="description" content="部署测试应用 k apply -f 03-03-demo_application.yaml export SOURCE_POD=$(kubectl get pod -l app=nginx -o jsonpath={.items..metadata.name}) 尝试访问百度
+kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep &#34;HTTP/&#34; 修改istio outboundTrafficPolicy 模式 # 修改istio模式为registry_only模式 # k edit cm istio -n istio-system --- apiVersion: v1 data: mesh: |- accessLogFile: /dev/stdout defaultConfig: discoveryAddress: istiod.istio-system.svc:15012 proxyMetadata: {} tracing: zipkin: address: zipkin.istio-system:9411 enablePrometheusMerge: true extensionProviders: - envoyOtelAls: port: 4317 service: opentelemetry-collector.istio-system.svc.cluster.local name: otel rootNamespace: istio-system trustDomain: cluster." />
 
-    <title>Tags | lin Blog Site</title>
+    <title>03 02 Serviceentry Readme | lin Blog Site</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -34,19 +36,57 @@
     
   <meta
     property="og:title"
-    content="Tags"
+    content="03 02 Serviceentry Readme"
   />
   <meta property="og:site_name" content="lin Blog Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://saberMomo.github.io/tags/" />
+  <meta property="og:description" content="部署测试应用 k apply -f 03-03-demo_application.yaml export SOURCE_POD=$(kubectl get pod -l app=nginx -o jsonpath={.items..metadata.name}) 尝试访问百度
+kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep &#34;HTTP/&#34; 修改istio outboundTrafficPolicy 模式 # 修改istio模式为registry_only模式 # k edit cm istio -n istio-system --- apiVersion: v1 data: mesh: |- accessLogFile: /dev/stdout defaultConfig: discoveryAddress: istiod.istio-system.svc:15012 proxyMetadata: {} tracing: zipkin: address: zipkin.istio-system:9411 enablePrometheusMerge: true extensionProviders: - envoyOtelAls: port: 4317 service: opentelemetry-collector.istio-system.svc.cluster.local name: otel rootNamespace: istio-system trustDomain: cluster." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saberMomo.github.io/istio/03-02-serviceentry-readme/" />
 
-
+<meta property="article:section" content="Istio" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Tags" />
+<meta name="twitter:title" content="03 02 Serviceentry Readme" />
+  <meta name="twitter:description" content="部署测试应用 k apply -f 03-03-demo_application.yaml export SOURCE_POD=$(kubectl get pod -l app=nginx -o jsonpath={.items..metadata.name}) 尝试访问百度
+kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep &#34;HTTP/&#34; 修改istio outboundTrafficPolicy 模式 # 修改istio模式为registry_only模式 # k edit cm istio -n istio-system --- apiVersion: v1 data: mesh: |- accessLogFile: /dev/stdout defaultConfig: discoveryAddress: istiod.istio-system.svc:15012 proxyMetadata: {} tracing: zipkin: address: zipkin.istio-system:9411 enablePrometheusMerge: true extensionProviders: - envoyOtelAls: port: 4317 service: opentelemetry-collector.istio-system.svc.cluster.local name: otel rootNamespace: istio-system trustDomain: cluster." />
 
 
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "TechArticle",
+      "articleSection": "Istio",
+      "name": "03 02 Serviceentry Readme",
+      "url" : "https://saberMomo.github.io/istio/03-02-serviceentry-readme/",
+      "headline": "03 02 Serviceentry Readme",
+      "description": "部署测试应用 k apply -f 03-03-demo_application.yaml export SOURCE_POD=$(kubectl get pod -l app=nginx -o jsonpath={.items..metadata.name}) 尝试访问百度\nkubectl exec -it $SOURCE_POD -c nginx -- curl -I https:\/\/www.baidu.com | grep \u0022HTTP\/\u0022 修改istio outboundTrafficPolicy 模式 # 修改istio模式为registry_only模式 # k edit cm istio -n istio-system --- apiVersion: v1 data: mesh: |- accessLogFile: \/dev\/stdout defaultConfig: discoveryAddress: istiod.istio-system.svc:15012 proxyMetadata: {} tracing: zipkin: address: zipkin.istio-system:9411 enablePrometheusMerge: true extensionProviders: - envoyOtelAls: port: 4317 service: opentelemetry-collector.istio-system.svc.cluster.local name: otel rootNamespace: istio-system trustDomain: cluster.",
+      "wordCount" : "179",
+      "inLanguage": "en",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://saberMomo.github.io/istio/03-02-serviceentry-readme/"
+      },
+      "copyrightHolder" : "lin Blog Site",
+      "copyrightYear" : "0001",
+      "dateCreated": "0001-01-01T00:00:00.00Z",
+      "datePublished": "0001-01-01T00:00:00.00Z",
+      "dateModified": "0001-01-01T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "lin Blog Site",
+          "url": "https://saberMomo.github.io/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://saberMomo.github.io/brand.svg",
+              "width":"32",
+              "height":"32"
+          }
+      }
+  }
+  </script>
 
 
     
@@ -111,7 +151,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="https://saberMomo.github.io/tags/" rel="canonical" type="text/html" />
+  <link href="https://saberMomo.github.io/istio/03-02-serviceentry-readme/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -464,10 +504,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/readme/"
+                    href="/istio/00-01-install/"
                     class="gdoc-nav__entry"
                   >
-                    Readme
+                    00 01 Install
                   </a>
                 </span>
               
@@ -477,14 +517,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -508,10 +540,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/install/"
+                    href="/istio/00-README-skip/"
                     class="gdoc-nav__entry"
                   >
-                    Install
+                    00 Readme Skip
                   </a>
                 </span>
               
@@ -521,14 +553,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -552,10 +576,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/virtualservice/"
+                    href="/istio/02-02-destinationrule-readme/"
                     class="gdoc-nav__entry"
                   >
-                    Virtualservice
+                    02 02 Destinationrule Readme
                   </a>
                 </span>
               
@@ -565,14 +589,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -596,10 +612,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/destinationrule/"
-                    class="gdoc-nav__entry"
+                    href="/istio/03-02-serviceentry-readme/"
+                    class="gdoc-nav__entry is-active"
                   >
-                    Destinationrule
+                    03 02 Serviceentry Readme
                   </a>
                 </span>
               
@@ -609,14 +625,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -640,10 +648,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/serviceentry/"
+                    href="/istio/05-01-sidercar/"
                     class="gdoc-nav__entry"
                   >
-                    Serviceentry
+                    05 01 Sidercar
                   </a>
                 </span>
               
@@ -653,14 +661,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -684,10 +684,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/gateway/"
+                    href="/istio/06-01-egress-mTLS-README/"
                     class="gdoc-nav__entry"
                   >
-                    Gateway
+                    06 01 Egress M Tls Readme
                   </a>
                 </span>
               
@@ -697,14 +697,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -726,14 +718,7 @@
               
             >
               
-                <span class="flex">
-                  <a
-                    href="/istio/sidecar/"
-                    class="gdoc-nav__entry"
-                  >
-                    Sidecar
-                  </a>
-                </span>
+                <span class="flex">Readme</span>
               
               
             </label>
@@ -775,19 +760,167 @@
         <div class="gdoc-page">
           
   
+
+
   
 
 
-<nav class="gdoc-paging flex flex-even align-center" role="navigation">
-  <div class="gdoc-paging__item gdoc-paging__item--prev">
-    
-  </div>
-  <div class="gdoc-paging__state">1/0</div>
-  <div class="gdoc-paging__item gdoc-paging__item--next">
-    
-  </div>
-</nav>
 
+
+
+
+<div
+  class="gdoc-page__header flex flex-wrap
+  
+    justify-between
+  
+  hidden-mobile
+  "
+  itemprop="breadcrumb"
+>
+  
+    <div>
+      <svg class="gdoc-icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+        
+        
+        
+  
+  
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>lin Blog Site</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/istio/' href='/istio/'><span itemprop='name'>Istio</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>03 02 Serviceentry Readme</span><meta itemprop='position' content='3' /></li>
+  
+
+  
+
+  
+
+      </ol>
+    </div>
+  
+  
+</div>
+
+
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--left"
+  >
+    <h1>03 02 Serviceentry Readme</h1>
+    <div class="gdoc-page__anchorwrap">
+    <h1 id="部署测试应用">
+        部署测试应用
+        <a data-clipboard-text="https://saberMomo.github.io/istio/03-02-serviceentry-readme/#部署测试应用" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 部署测试应用" aria-label="Anchor to: 部署测试应用" href="#%e9%83%a8%e7%bd%b2%e6%b5%8b%e8%af%95%e5%ba%94%e7%94%a8">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">k apply -f 03-03-demo_application.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SOURCE_POD</span><span class="o">=</span><span class="k">$(</span>kubectl get pod -l <span class="nv">app</span><span class="o">=</span>nginx -o <span class="nv">jsonpath</span><span class="o">={</span>.items..metadata.name<span class="o">}</span><span class="k">)</span>
+</span></span></code></pre></div><p>尝试访问百度</p>
+<pre tabindex="0"><code>kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep  &#34;HTTP/&#34;
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h1 id="修改istio-outboundtrafficpolicy-模式">
+        修改istio outboundTrafficPolicy 模式
+        <a data-clipboard-text="https://saberMomo.github.io/istio/03-02-serviceentry-readme/#修改istio-outboundtrafficpolicy-模式" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 修改istio outboundTrafficPolicy 模式" aria-label="Anchor to: 修改istio outboundTrafficPolicy 模式" href="#%e4%bf%ae%e6%94%b9istio-outboundtrafficpolicy-%e6%a8%a1%e5%bc%8f">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># 修改istio模式为registry_only模式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># k edit cm istio -n istio-system</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mesh</span><span class="p">:</span><span class="w"> </span><span class="p">|-</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">    accessLogFile: /dev/stdout
+</span></span></span><span class="line"><span class="cl"><span class="sd">    defaultConfig:
+</span></span></span><span class="line"><span class="cl"><span class="sd">      discoveryAddress: istiod.istio-system.svc:15012
+</span></span></span><span class="line"><span class="cl"><span class="sd">      proxyMetadata: {}
+</span></span></span><span class="line"><span class="cl"><span class="sd">      tracing:
+</span></span></span><span class="line"><span class="cl"><span class="sd">        zipkin:
+</span></span></span><span class="line"><span class="cl"><span class="sd">          address: zipkin.istio-system:9411
+</span></span></span><span class="line"><span class="cl"><span class="sd">    enablePrometheusMerge: true
+</span></span></span><span class="line"><span class="cl"><span class="sd">    extensionProviders:
+</span></span></span><span class="line"><span class="cl"><span class="sd">    - envoyOtelAls:
+</span></span></span><span class="line"><span class="cl"><span class="sd">        port: 4317
+</span></span></span><span class="line"><span class="cl"><span class="sd">        service: opentelemetry-collector.istio-system.svc.cluster.local
+</span></span></span><span class="line"><span class="cl"><span class="sd">      name: otel
+</span></span></span><span class="line"><span class="cl"><span class="sd">    rootNamespace: istio-system
+</span></span></span><span class="line"><span class="cl"><span class="sd">    trustDomain: cluster.local
+</span></span></span><span class="line"><span class="cl"><span class="sd">    outboundTrafficPolicy:
+</span></span></span><span class="line"><span class="cl"><span class="sd">      mode: REGISTRY_ONLY</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># mode: ALLOW_ANY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">meshNetworks: &#39;networks</span><span class="p">:</span><span class="w"> </span>{}<span class="l">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ConfigMap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">install.operator.istio.io/owning-resource-namespace</span><span class="p">:</span><span class="w"> </span><span class="l">istio-system</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">istio.io/rev</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">operator.istio.io/component</span><span class="p">:</span><span class="w"> </span><span class="l">Pilot</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">operator.istio.io/managed</span><span class="p">:</span><span class="w"> </span><span class="l">Reconcile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">istio</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">istio-system</span><span class="w">
+</span></span></span></code></pre></div><p>尝试访问百度(访问不通)</p>
+<pre tabindex="0"><code>kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep  &#34;HTTP/&#34;
+</code></pre><p>创建ServiceEntry</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f 03-01-serviceentry.yaml
+</span></span></code></pre></div><p>尝试访问百度(访问通)</p>
+<pre tabindex="0"><code>kubectl exec -it $SOURCE_POD -c nginx -- curl -I https://www.baidu.com | grep  &#34;HTTP/&#34;
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h1 id="清理资源">
+        清理资源
+        <a data-clipboard-text="https://saberMomo.github.io/istio/03-02-serviceentry-readme/#清理资源" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 清理资源" aria-label="Anchor to: 清理资源" href="#%e6%b8%85%e7%90%86%e8%b5%84%e6%ba%90">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl get configmap istio -n istio-system -o yaml <span class="p">|</span> sed <span class="s1">&#39;s/mode: REGISTRY_ONLY/mode: ALLOW_ANY/g&#39;</span> <span class="p">|</span> kubectl replace -n istio-system -f -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl delete -f 03-01-serviceentry.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl delete -f 03-03-demo_application.yaml
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="附">
+        附
+        <a data-clipboard-text="https://saberMomo.github.io/istio/03-02-serviceentry-readme/#附" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 附" aria-label="Anchor to: 附" href="#%e9%99%84">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="外部服务的访问方式">
+        外部服务的访问方式
+        <a data-clipboard-text="https://saberMomo.github.io/istio/03-02-serviceentry-readme/#外部服务的访问方式" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 外部服务的访问方式" aria-label="Anchor to: 外部服务的访问方式" href="#%e5%a4%96%e9%83%a8%e6%9c%8d%e5%8a%a1%e7%9a%84%e8%ae%bf%e9%97%ae%e6%96%b9%e5%bc%8f">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<ul>
+<li>允许envoy代理将请求传递给未在网格内配置的服务。</li>
+<li>配置ServiceEntry去提供到外部服务访问控制。</li>
+<li>针对指定的IP地址范围完全的旁路掉Envoy代理(忽略掉这个地址段的服务，可直接对外访问服务)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl describe pod kube-apiserver -n kube-system <span class="p">|</span> grep <span class="s1">&#39;service-cluster-ip-range&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">istioctl manifest apply --set <span class="nv">profile</span><span class="o">=</span>demo --set values.global.proxy.includeIPRanges<span class="o">=</span><span class="s2">&#34;10.96.0.0/12&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+
+  </article>
 
 
 

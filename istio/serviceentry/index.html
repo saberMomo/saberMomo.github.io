@@ -12,8 +12,14 @@
 <meta name="generator" content="Hugo 0.108.0">
 
 
+  <meta name="description" content="Table of Contents
+serviceentry serviceentry apiVersion: networking.istio.io/v1beta1 kind: ServiceEntry metadata: name: svc-entry namespace: test spec: hosts: - &#34;www.baidu.com&#34; ports: - number: 80 name: http protocol: HTTP - number: 443 name: https protocol: HTTPS location: MESH_EXTERNAL resolution: DNS serviceEntry服务发现模式说明
+resolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE
+DNS 模式:，当 pod 里的应用发送 www.baidu.com 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。
+STATIC 模式: 当 pod 里的应用发送 www.baidu.com 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint
+NONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。" />
 
-    <title>Tags | lin Blog Site</title>
+    <title>Serviceentry | lin Blog Site</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -34,19 +40,73 @@
     
   <meta
     property="og:title"
-    content="Tags"
+    content="Serviceentry"
   />
   <meta property="og:site_name" content="lin Blog Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://saberMomo.github.io/tags/" />
+  <meta property="og:description" content="Table of Contents
+serviceentry serviceentry apiVersion: networking.istio.io/v1beta1 kind: ServiceEntry metadata: name: svc-entry namespace: test spec: hosts: - &#34;www.baidu.com&#34; ports: - number: 80 name: http protocol: HTTP - number: 443 name: https protocol: HTTPS location: MESH_EXTERNAL resolution: DNS serviceEntry服务发现模式说明
+resolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE
+DNS 模式:，当 pod 里的应用发送 www.baidu.com 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。
+STATIC 模式: 当 pod 里的应用发送 www.baidu.com 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint
+NONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saberMomo.github.io/istio/serviceentry/" />
 
-
+<meta property="article:section" content="Istio" />
+    <meta
+      property="article:published_time"
+      content="2022-12-15T22:37:18+08:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2022-12-15T22:37:18+08:00"
+    />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Tags" />
+<meta name="twitter:title" content="Serviceentry" />
+  <meta name="twitter:description" content="Table of Contents
+serviceentry serviceentry apiVersion: networking.istio.io/v1beta1 kind: ServiceEntry metadata: name: svc-entry namespace: test spec: hosts: - &#34;www.baidu.com&#34; ports: - number: 80 name: http protocol: HTTP - number: 443 name: https protocol: HTTPS location: MESH_EXTERNAL resolution: DNS serviceEntry服务发现模式说明
+resolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE
+DNS 模式:，当 pod 里的应用发送 www.baidu.com 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。
+STATIC 模式: 当 pod 里的应用发送 www.baidu.com 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint
+NONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。" />
 
 
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "TechArticle",
+      "articleSection": "Istio",
+      "name": "Serviceentry",
+      "url" : "https://saberMomo.github.io/istio/serviceentry/",
+      "headline": "Serviceentry",
+      "description": "Table of Contents\nserviceentry serviceentry apiVersion: networking.istio.io\/v1beta1 kind: ServiceEntry metadata: name: svc-entry namespace: test spec: hosts: - \u0022www.baidu.com\u0022 ports: - number: 80 name: http protocol: HTTP - number: 443 name: https protocol: HTTPS location: MESH_EXTERNAL resolution: DNS serviceEntry服务发现模式说明\nresolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE\nDNS 模式:，当 pod 里的应用发送 www.baidu.com 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。\nSTATIC 模式: 当 pod 里的应用发送 www.baidu.com 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 https:\/\/istio.io\/latest\/zh\/docs\/reference\/config\/networking\/service-entry\/#ServiceEntry-Endpoint\nNONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。",
+      "wordCount" : "66",
+      "inLanguage": "en",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://saberMomo.github.io/istio/serviceentry/"
+      },
+      "copyrightHolder" : "lin Blog Site",
+      "copyrightYear" : "2022",
+      "dateCreated": "2022-12-15T22:37:18.00Z",
+      "datePublished": "2022-12-15T22:37:18.00Z",
+      "dateModified": "2022-12-15T22:37:18.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "lin Blog Site",
+          "url": "https://saberMomo.github.io/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://saberMomo.github.io/brand.svg",
+              "width":"32",
+              "height":"32"
+          }
+      }
+  }
+  </script>
 
 
     
@@ -111,7 +171,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="https://saberMomo.github.io/tags/" rel="canonical" type="text/html" />
+  <link href="https://saberMomo.github.io/istio/serviceentry/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -641,7 +701,7 @@
                 <span class="flex">
                   <a
                     href="/istio/serviceentry/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     Serviceentry
                   </a>
@@ -775,19 +835,125 @@
         <div class="gdoc-page">
           
   
+
+
   
 
 
-<nav class="gdoc-paging flex flex-even align-center" role="navigation">
-  <div class="gdoc-paging__item gdoc-paging__item--prev">
-    
-  </div>
-  <div class="gdoc-paging__state">1/0</div>
-  <div class="gdoc-paging__item gdoc-paging__item--next">
-    
-  </div>
-</nav>
 
+
+
+
+<div
+  class="gdoc-page__header flex flex-wrap
+  
+    justify-between
+  
+  hidden-mobile
+  "
+  itemprop="breadcrumb"
+>
+  
+    <div>
+      <svg class="gdoc-icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+        
+        
+        
+  
+  
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>lin Blog Site</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/istio/' href='/istio/'><span itemprop='name'>Istio</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Serviceentry</span><meta itemprop='position' content='3' /></li>
+  
+
+  
+
+  
+
+      </ol>
+    </div>
+  
+  
+</div>
+
+
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--left"
+  >
+    <h1>Serviceentry</h1>
+    <p><font size=6><strong>Table of Contents</strong></font></p>
+<ul>
+<li><a
+  class="gdoc-markdown__link"
+  href="#serviceentry"
+>serviceentry</a></li>
+</ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="serviceentry">
+        serviceentry
+        <a data-clipboard-text="https://saberMomo.github.io/istio/serviceentry/#serviceentry" class="gdoc-page__anchor clip flex align-center" title="Anchor to: serviceentry" aria-label="Anchor to: serviceentry" href="#serviceentry">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">networking.istio.io/v1beta1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ServiceEntry</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">svc-entry</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;www.baidu.com&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">HTTP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">443</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">https</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">HTTPS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l">MESH_EXTERNAL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">resolution</span><span class="p">:</span><span class="w"> </span><span class="l">DNS</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>
+<p>serviceEntry服务发现模式说明</p>
+<p>resolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE</p>
+<ul>
+<li>
+<p>DNS 模式:，当 pod 里的应用发送 <a
+  class="gdoc-markdown__link"
+  href="https://www.baidu.com"
+>www.baidu.com</a> 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。</p>
+</li>
+<li>
+<p>STATIC 模式: 当 pod 里的应用发送 <a
+  class="gdoc-markdown__link"
+  href="https://www.baidu.com"
+>www.baidu.com</a> 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 <a
+  class="gdoc-markdown__link"
+  href="https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint"
+>https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint</a></p>
+</li>
+<li>
+<p>NONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+  </article>
 
 
 

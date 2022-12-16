@@ -12,8 +12,11 @@
 <meta name="generator" content="Hugo 0.108.0">
 
 
+  <meta name="description" content="签发证书 cd 06-egress-demo bash 06-egress-mTLS-issue-cert.sh
+部署一个mTLS服务 # 该资源需要创建ServiceEntry 和 VirtualService kubens istio-system bash 06-egress-mTLS-deploy-mTLS-app.sh 使用客户端证书重新部署egress gateway # 部署 bash 06-use-cert-deploy-egress-gateway.sh # 校验 # tls.crt 与 tls.key 在 /etc/istio/nginx-client-certs 中，而 ca-chain.cert.pem 在 /etc/istio/nginx-ca-certs 中。 kubectl exec -n istio-system &#34;$(kubectl -n istio-system get pods -l istio=egressgateway -o jsonpath=&#39;{.items[0].metadata.name}&#39;)&#34; -- ls -al /etc/istio/nginx-client-certs /etc/istio/nginx-ca-certs 为egress流量配置mTLS bash 06-config-egress-mTLS-traffic.sh
+校验 # 创建demo应用 kubectl apply -f 06-demo-application.yaml # 发送一个 HTTP 请求至 http://my-nginx.mesh-external.svc.cluster.local： kubectl -n lin-test exec &#34;$(kubectl -n lin-test get pod -l app=nginx -o jsonpath={." />
 
-    <title>Tags | lin Blog Site</title>
+    <title>06 01 Egress M Tls Readme | lin Blog Site</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -34,19 +37,59 @@
     
   <meta
     property="og:title"
-    content="Tags"
+    content="06 01 Egress M Tls Readme"
   />
   <meta property="og:site_name" content="lin Blog Site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://saberMomo.github.io/tags/" />
+  <meta property="og:description" content="签发证书 cd 06-egress-demo bash 06-egress-mTLS-issue-cert.sh
+部署一个mTLS服务 # 该资源需要创建ServiceEntry 和 VirtualService kubens istio-system bash 06-egress-mTLS-deploy-mTLS-app.sh 使用客户端证书重新部署egress gateway # 部署 bash 06-use-cert-deploy-egress-gateway.sh # 校验 # tls.crt 与 tls.key 在 /etc/istio/nginx-client-certs 中，而 ca-chain.cert.pem 在 /etc/istio/nginx-ca-certs 中。 kubectl exec -n istio-system &#34;$(kubectl -n istio-system get pods -l istio=egressgateway -o jsonpath=&#39;{.items[0].metadata.name}&#39;)&#34; -- ls -al /etc/istio/nginx-client-certs /etc/istio/nginx-ca-certs 为egress流量配置mTLS bash 06-config-egress-mTLS-traffic.sh
+校验 # 创建demo应用 kubectl apply -f 06-demo-application.yaml # 发送一个 HTTP 请求至 http://my-nginx.mesh-external.svc.cluster.local： kubectl -n lin-test exec &#34;$(kubectl -n lin-test get pod -l app=nginx -o jsonpath={." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/" />
 
-
+<meta property="article:section" content="Istio" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Tags" />
+<meta name="twitter:title" content="06 01 Egress M Tls Readme" />
+  <meta name="twitter:description" content="签发证书 cd 06-egress-demo bash 06-egress-mTLS-issue-cert.sh
+部署一个mTLS服务 # 该资源需要创建ServiceEntry 和 VirtualService kubens istio-system bash 06-egress-mTLS-deploy-mTLS-app.sh 使用客户端证书重新部署egress gateway # 部署 bash 06-use-cert-deploy-egress-gateway.sh # 校验 # tls.crt 与 tls.key 在 /etc/istio/nginx-client-certs 中，而 ca-chain.cert.pem 在 /etc/istio/nginx-ca-certs 中。 kubectl exec -n istio-system &#34;$(kubectl -n istio-system get pods -l istio=egressgateway -o jsonpath=&#39;{.items[0].metadata.name}&#39;)&#34; -- ls -al /etc/istio/nginx-client-certs /etc/istio/nginx-ca-certs 为egress流量配置mTLS bash 06-config-egress-mTLS-traffic.sh
+校验 # 创建demo应用 kubectl apply -f 06-demo-application.yaml # 发送一个 HTTP 请求至 http://my-nginx.mesh-external.svc.cluster.local： kubectl -n lin-test exec &#34;$(kubectl -n lin-test get pod -l app=nginx -o jsonpath={." />
 
 
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "TechArticle",
+      "articleSection": "Istio",
+      "name": "06 01 Egress M Tls Readme",
+      "url" : "https://saberMomo.github.io/istio/06-01-egress-mTLS-README/",
+      "headline": "06 01 Egress M Tls Readme",
+      "description": "签发证书 cd 06-egress-demo bash 06-egress-mTLS-issue-cert.sh\n部署一个mTLS服务 # 该资源需要创建ServiceEntry 和 VirtualService kubens istio-system bash 06-egress-mTLS-deploy-mTLS-app.sh 使用客户端证书重新部署egress gateway # 部署 bash 06-use-cert-deploy-egress-gateway.sh # 校验 # tls.crt 与 tls.key 在 \/etc\/istio\/nginx-client-certs 中，而 ca-chain.cert.pem 在 \/etc\/istio\/nginx-ca-certs 中。 kubectl exec -n istio-system \u0022$(kubectl -n istio-system get pods -l istio=egressgateway -o jsonpath=\u0027{.items[0].metadata.name}\u0027)\u0022 -- ls -al \/etc\/istio\/nginx-client-certs \/etc\/istio\/nginx-ca-certs 为egress流量配置mTLS bash 06-config-egress-mTLS-traffic.sh\n校验 # 创建demo应用 kubectl apply -f 06-demo-application.yaml # 发送一个 HTTP 请求至 http:\/\/my-nginx.mesh-external.svc.cluster.local： kubectl -n lin-test exec \u0022$(kubectl -n lin-test get pod -l app=nginx -o jsonpath={.",
+      "wordCount" : "229",
+      "inLanguage": "en",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://saberMomo.github.io/istio/06-01-egress-mTLS-README/"
+      },
+      "copyrightHolder" : "lin Blog Site",
+      "copyrightYear" : "0001",
+      "dateCreated": "0001-01-01T00:00:00.00Z",
+      "datePublished": "0001-01-01T00:00:00.00Z",
+      "dateModified": "0001-01-01T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "lin Blog Site",
+          "url": "https://saberMomo.github.io/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://saberMomo.github.io/brand.svg",
+              "width":"32",
+              "height":"32"
+          }
+      }
+  }
+  </script>
 
 
     
@@ -111,7 +154,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="https://saberMomo.github.io/tags/" rel="canonical" type="text/html" />
+  <link href="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -464,10 +507,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/readme/"
+                    href="/istio/00-01-install/"
                     class="gdoc-nav__entry"
                   >
-                    Readme
+                    00 01 Install
                   </a>
                 </span>
               
@@ -477,14 +520,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -508,10 +543,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/install/"
+                    href="/istio/00-README-skip/"
                     class="gdoc-nav__entry"
                   >
-                    Install
+                    00 Readme Skip
                   </a>
                 </span>
               
@@ -521,14 +556,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -552,10 +579,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/virtualservice/"
+                    href="/istio/02-02-destinationrule-readme/"
                     class="gdoc-nav__entry"
                   >
-                    Virtualservice
+                    02 02 Destinationrule Readme
                   </a>
                 </span>
               
@@ -565,14 +592,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -596,10 +615,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/destinationrule/"
+                    href="/istio/03-02-serviceentry-readme/"
                     class="gdoc-nav__entry"
                   >
-                    Destinationrule
+                    03 02 Serviceentry Readme
                   </a>
                 </span>
               
@@ -609,14 +628,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -640,10 +651,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/serviceentry/"
+                    href="/istio/05-01-sidercar/"
                     class="gdoc-nav__entry"
                   >
-                    Serviceentry
+                    05 01 Sidercar
                   </a>
                 </span>
               
@@ -653,14 +664,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -684,10 +687,10 @@
               
                 <span class="flex">
                   <a
-                    href="/istio/gateway/"
-                    class="gdoc-nav__entry"
+                    href="/istio/06-01-egress-mTLS-README/"
+                    class="gdoc-nav__entry is-active"
                   >
-                    Gateway
+                    06 01 Egress M Tls Readme
                   </a>
                 </span>
               
@@ -697,14 +700,6 @@
             
           </li>
         
-      
-    
-      
-
-      
-        
-      
-
       
         
           
@@ -726,14 +721,7 @@
               
             >
               
-                <span class="flex">
-                  <a
-                    href="/istio/sidecar/"
-                    class="gdoc-nav__entry"
-                  >
-                    Sidecar
-                  </a>
-                </span>
+                <span class="flex">Readme</span>
               
               
             </label>
@@ -775,19 +763,160 @@
         <div class="gdoc-page">
           
   
+
+
   
 
 
-<nav class="gdoc-paging flex flex-even align-center" role="navigation">
-  <div class="gdoc-paging__item gdoc-paging__item--prev">
-    
-  </div>
-  <div class="gdoc-paging__state">1/0</div>
-  <div class="gdoc-paging__item gdoc-paging__item--next">
-    
-  </div>
-</nav>
 
+
+
+
+<div
+  class="gdoc-page__header flex flex-wrap
+  
+    justify-between
+  
+  hidden-mobile
+  "
+  itemprop="breadcrumb"
+>
+  
+    <div>
+      <svg class="gdoc-icon gdoc_path hidden-mobile"><use xlink:href="#gdoc_path"></use></svg>
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+        
+        
+        
+  
+  
+    
+    
+    
+    
+  
+  
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>lin Blog Site</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/istio/' href='/istio/'><span itemprop='name'>Istio</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>06 01 Egress M Tls Readme</span><meta itemprop='position' content='3' /></li>
+  
+
+  
+
+  
+
+      </ol>
+    </div>
+  
+  
+</div>
+
+
+
+  <article
+    class="gdoc-markdown gdoc-markdown__align--left"
+  >
+    <h1>06 01 Egress M Tls Readme</h1>
+    <div class="gdoc-page__anchorwrap">
+    <h1 id="签发证书">
+        签发证书
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#签发证书" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 签发证书" aria-label="Anchor to: 签发证书" href="#%e7%ad%be%e5%8f%91%e8%af%81%e4%b9%a6">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<p>cd 06-egress-demo
+bash 06-egress-mTLS-issue-cert.sh</p>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="部署一个mtls服务">
+        部署一个mTLS服务
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#部署一个mtls服务" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 部署一个mTLS服务" aria-label="Anchor to: 部署一个mTLS服务" href="#%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aamtls%e6%9c%8d%e5%8a%a1">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 该资源需要创建ServiceEntry 和 VirtualService</span>
+</span></span><span class="line"><span class="cl">kubens istio-system
+</span></span><span class="line"><span class="cl">bash 06-egress-mTLS-deploy-mTLS-app.sh
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="使用客户端证书重新部署egress-gateway">
+        使用客户端证书重新部署egress gateway
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#使用客户端证书重新部署egress-gateway" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 使用客户端证书重新部署egress gateway" aria-label="Anchor to: 使用客户端证书重新部署egress gateway" href="#%e4%bd%bf%e7%94%a8%e5%ae%a2%e6%88%b7%e7%ab%af%e8%af%81%e4%b9%a6%e9%87%8d%e6%96%b0%e9%83%a8%e7%bd%b2egress-gateway">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 部署</span>
+</span></span><span class="line"><span class="cl">bash 06-use-cert-deploy-egress-gateway.sh
+</span></span><span class="line"><span class="cl"><span class="c1"># 校验</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tls.crt 与 tls.key 在 /etc/istio/nginx-client-certs 中，而 ca-chain.cert.pem 在 /etc/istio/nginx-ca-certs 中。</span>
+</span></span><span class="line"><span class="cl">kubectl <span class="nb">exec</span> -n istio-system <span class="s2">&#34;</span><span class="k">$(</span>kubectl -n istio-system get pods -l <span class="nv">istio</span><span class="o">=</span>egressgateway -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.items[0].metadata.name}&#39;</span><span class="k">)</span><span class="s2">&#34;</span> -- ls -al /etc/istio/nginx-client-certs /etc/istio/nginx-ca-certs
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="为egress流量配置mtls">
+        为egress流量配置mTLS
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#为egress流量配置mtls" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 为egress流量配置mTLS" aria-label="Anchor to: 为egress流量配置mTLS" href="#%e4%b8%baegress%e6%b5%81%e9%87%8f%e9%85%8d%e7%bd%aemtls">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<p>bash 06-config-egress-mTLS-traffic.sh</p>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="校验">
+        校验
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#校验" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 校验" aria-label="Anchor to: 校验" href="#%e6%a0%a1%e9%aa%8c">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建demo应用</span>
+</span></span><span class="line"><span class="cl">kubectl apply -f 06-demo-application.yaml
+</span></span><span class="line"><span class="cl"><span class="c1"># 发送一个 HTTP 请求至 http://my-nginx.mesh-external.svc.cluster.local：</span>
+</span></span><span class="line"><span class="cl">kubectl -n lin-test <span class="nb">exec</span> <span class="s2">&#34;</span><span class="k">$(</span>kubectl -n lin-test get pod -l <span class="nv">app</span><span class="o">=</span>nginx -o <span class="nv">jsonpath</span><span class="o">={</span>.items..metadata.name<span class="o">}</span><span class="k">)</span><span class="s2">&#34;</span> -c nginx -- curl -sS http://my-nginx.mesh-external.svc.cluster.local
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 本地</span>
+</span></span><span class="line"><span class="cl">kubectl patch svc my-nginx -p <span class="s1">&#39;{&#34;spec&#34;:{&#34;type&#34;: &#34;NodePort&#34;}}&#39;</span> -n mesh-external
+</span></span><span class="line"><span class="cl"><span class="nv">port</span><span class="o">=</span><span class="k">$(</span>kubectl get svc my-nginx -n mesh-external -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.spec.ports[0].nodePort}&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">curl -k --cert client.example.com.crt --key client.example.com.key <span class="s2">&#34;https://192.168.59.101:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># curl -k --cert client.example.com.crt --key client.example.com.key -H &#34;Host:nginx.example.com&#34;  &#34;https://192.168.59.101:31742/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查 istio-egressgateway pod 日志，有一行与请求相关的日志记录。 如果 Istio 部署在命名空间 istio-system 中，打印日志的命令为：</span>
+</span></span><span class="line"><span class="cl">kubectl logs -l <span class="nv">istio</span><span class="o">=</span>egressgateway -n istio-system <span class="p">|</span> grep <span class="s1">&#39;my-nginx.mesh-external.svc.cluster.local&#39;</span> <span class="p">|</span> grep HTTP
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h1 id="清理资源">
+        清理资源
+        <a data-clipboard-text="https://saberMomo.github.io/istio/06-01-egress-mTLS-README/#清理资源" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 清理资源" aria-label="Anchor to: 清理资源" href="#%e6%b8%85%e7%90%86%e8%b5%84%e6%ba%90">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 删除创建的 Kubernetes 资源：</span>
+</span></span><span class="line"><span class="cl">kubectl delete secret nginx-server-certs nginx-ca-certs -n mesh-external
+</span></span><span class="line"><span class="cl">kubectl delete secret client-credential -n istio-system
+</span></span><span class="line"><span class="cl">kubectl delete configmap nginx-configmap -n mesh-external
+</span></span><span class="line"><span class="cl">kubectl delete service my-nginx -n mesh-external
+</span></span><span class="line"><span class="cl">kubectl delete deployment my-nginx -n mesh-external
+</span></span><span class="line"><span class="cl">kubectl delete namespace mesh-external
+</span></span><span class="line"><span class="cl">kubectl delete gateway istio-egressgateway
+</span></span><span class="line"><span class="cl">kubectl delete virtualservice direct-nginx-through-egress-gateway
+</span></span><span class="line"><span class="cl">kubectl delete destinationrule -n istio-system originate-mtls-for-nginx
+</span></span><span class="line"><span class="cl">kubectl delete destinationrule egressgateway-for-nginx
+</span></span><span class="line"><span class="cl">kubectl delete secret nginx-client-certs nginx-ca-certs -n istio-system
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl delete -f 06-demo-application.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除证书和私钥：</span>
+</span></span><span class="line"><span class="cl">rm example.com.crt example.com.key my-nginx.mesh-external.svc.cluster.local.crt my-nginx.mesh-external.svc.cluster.local.key my-nginx.mesh-external.svc.cluster.local.csr client.example.com.crt client.example.com.csr client.example.com.key
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除生成并应用于示例中的配置文件</span>
+</span></span><span class="line"><span class="cl">rm ./nginx.conf
+</span></span><span class="line"><span class="cl">rm ./gateway-patch.json
+</span></span></code></pre></div>
+  </article>
 
 
 

@@ -6,7 +6,88 @@
     <description>Recent content on lin Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Dec 2022 09:45:35 +0800</lastBuildDate><atom:link href="https://saberMomo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Dec 2022 22:37:56 +0800</lastBuildDate><atom:link href="https://saberMomo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Readme</title>
+      <link>https://saberMomo.github.io/istio/readme/</link>
+      <pubDate>Wed, 14 Dec 2022 09:25:58 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/readme/</guid>
+      <description>Table of Contents
+什么是Service Mesh Service Mesh的特点 什么是Istio 为什么需要Istio Istio的功能 Istio的架构 如何使用Istio 什么是Service Mesh 服务网格（Service Mesh）是处理服务间通信的基础设施层。它负责构成现代云原生应用程序的复杂服务拓扑来可靠地交付请求。在实践中，Service Mesh 通常以轻量级网络代理阵列的形式实现，这些代理与应用程序代码部署在一起，对应用程序来说无需感知代理的存在。
+维基百科解释如下：
+In software architecture, a service mesh is a dedicated infrastructure layer for facilitating service-to-service communications between services or microservices, using a proxy.
+Service Mesh的特点 Service Mesh 有如下几个特点：
+应用程序间通信的中间层 轻量级网络代理 应用程序无感知 解耦应用程序的重试/超时、监控、追踪和服务发现 目前两款流行的 Service Mesh 开源软件 Istio 和 Linkerd 都可以直接在 Kubernetes 中集成，其中 Linkerd 已经成为 CNCF 中的项目。
+什么是Istio Istio 是一种服务网格工具，是一种现代化的服务网络层，它提供了一种透明、独立于语言的方法，以灵活且轻松地实现应用网络功能自动化。它是一种管理构成云原生应用的不同微服务的常用解决方案。Istio 服务网格还支持这些微服务彼此之间的通信和数据共享方式。
+为什么需要Istio Service Mesh 并没有给我们带来新功能，它是用于解决其他工具已经解决过的问题，只不过这次是在以 Kubernetes 为基础的云原生生态环境下的实现。</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>https://saberMomo.github.io/istio/install/</link>
+      <pubDate>Thu, 15 Dec 2022 22:35:35 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/install/</guid>
+      <description>Table of Contents
+install istio and kiali install istio and kiali 根据官方文档下载istio工具，这里我使用的istio 1.15.0， 所以工具名称改为了istioctl_1_15_0
+istioctl_1_15_0 install --set profile=demo --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/kiali.yaml kubectl apply -f https://raw.githubusercontent.com/istio/istio/master/samples/addons/prometheus.yaml istioctl_1_15_0 dashboard kiali </description>
+    </item>
+    
+    <item>
+      <title>Virtualservice</title>
+      <link>https://saberMomo.github.io/istio/virtualservice/</link>
+      <pubDate>Thu, 15 Dec 2022 22:36:23 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/virtualservice/</guid>
+      <description>Table of Contents
+virtualservice virtualservice apiVersion: networking.istio.io/v1alpha3 kind: VirtualService metadata: name: reviews spec: hosts: - reviews http: - match: - headers: end-user: exact: jason #规则限制为仅匹配v2 DR，且请求包含值为 jason 的end-user自定义标头。 route: - destination: host: reviews subset: v2 - route: - destination: host: reviews subset: v3 </description>
+    </item>
+    
+    <item>
+      <title>Destinationrule</title>
+      <link>https://saberMomo.github.io/istio/destinationrule/</link>
+      <pubDate>Thu, 15 Dec 2022 22:36:52 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/destinationrule/</guid>
+      <description>Table of Contents
+destinationrule destinationrule apiVersion: networking.istio.io/v1alpha3 kind: DestinationRule metadata: name: my-destination-rule spec: host: my-svc trafficPolicy: loadBalancer: simple: RANDOM subsets: - name: v1 labels: version: v1 - name: v2 labels: version: v2 trafficPolicy: loadBalancer: simple: ROUND_ROBIN - name: v3 labels: version: v3 </description>
+    </item>
+    
+    <item>
+      <title>Serviceentry</title>
+      <link>https://saberMomo.github.io/istio/serviceentry/</link>
+      <pubDate>Thu, 15 Dec 2022 22:37:18 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/serviceentry/</guid>
+      <description>Table of Contents
+serviceentry serviceentry apiVersion: networking.istio.io/v1beta1 kind: ServiceEntry metadata: name: svc-entry namespace: test spec: hosts: - &amp;#34;www.baidu.com&amp;#34; ports: - number: 80 name: http protocol: HTTP - number: 443 name: https protocol: HTTPS location: MESH_EXTERNAL resolution: DNS serviceEntry服务发现模式说明
+resolution的定义, 它用来定义服务发现的模式，它有三种值，分别为 DNS、STATIC 和 NONE
+DNS 模式:，当 pod 里的应用发送 www.baidu.com 请求的时候，会使用dns来查找域名指定的服务器，在这种情况下，就和我们平时打开一个网站逻辑完全一样，所以肯定是可以正常访问的。
+STATIC 模式: 当 pod 里的应用发送 www.baidu.com 请求的时候，会向请求转到 endpoints 字段指定的IP 服务器，我们这里指向的是一个内网IP地址，所以无法正常响应。对于endpoints字段可以多个，并允许对其根据 LB 权重设置, 有兴趣的可以了解下 https://istio.io/latest/zh/docs/reference/config/networking/service-entry/#ServiceEntry-Endpoint
+NONE 模式: 要小心使用，在这种模式下，如果未指定任何IP地址的话，则默认将允许发送到任意IP上。</description>
+    </item>
+    
+    <item>
+      <title>Gateway</title>
+      <link>https://saberMomo.github.io/istio/gateway/</link>
+      <pubDate>Thu, 15 Dec 2022 22:37:56 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/gateway/</guid>
+      <description>Table of Contents
+gateway gateway apiVersion: networking.istio.io/v1beta1 kind: Gateway metadata: annotations: labels: istio: ingressgateway name: demo-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - hosts: - qwe.asd.com port: name: http-digital number: 80 protocol: HTTP </description>
+    </item>
+    
+    <item>
+      <title>Sidecar</title>
+      <link>https://saberMomo.github.io/istio/sidecar/</link>
+      <pubDate>Thu, 15 Dec 2022 22:33:43 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/istio/sidecar/</guid>
+      <description>Table of Contents
+sidercar Sidecar 注入实例分析 istio-init istio-proxy Istio 如何实现自动注入Sidercar 附 iptables sidercar Sidecar 注入实例分析 istio-init：用于给 Sidecar 容器即 Envoy 代理做初始化，设置 iptables 端口转发 istio-proxy：Envoy 代理容器，运行 Envoy 代理 istio-init # istio-init container yaml initContainers: - name: istio-init image: docker.io/istio/proxyv2:1.13.1 args: - istio-iptables - &amp;#39;-p&amp;#39; - &amp;#39;15001&amp;#39; - &amp;#39;-z&amp;#39; - &amp;#39;15006&amp;#39; - &amp;#39;-u&amp;#39; - &amp;#39;1337&amp;#39; - &amp;#39;-m&amp;#39; - REDIRECT - &amp;#39;-i&amp;#39; - &amp;#39;*&amp;#39; - &amp;#39;-x&amp;#39; - &amp;#39;&amp;#39; - &amp;#39;-b&amp;#39; - &amp;#39;*&amp;#39; - &amp;#39;-d&amp;#39; - 15090,15021,15020 该容器存在的意义就是让 Envoy 代理可以拦截所有的进出 Pod 的流量，即将入站流量重定向到 Sidecar，再拦截应用容器的出站流量经过 Sidecar 处理后再出站。</description>
+    </item>
+    
     <item>
       <title>VPC</title>
       <link>https://saberMomo.github.io/AWS/VPC/</link>
@@ -35,15 +116,6 @@
       <description>什么是IAM AWS Identity and Access Management (IAM) 是一种 Web 服务，可以安全地控制对AWS资源的访问。
 AWS 账户根用户是创建AWS 账户时创建的。建议不要使用跟用户执行日常AWS操作
 IAM 功能 可多人共享操作AWS 资源，创建单独的IAM role可以不必共享自己的登陆信息 精细权限管理 可以针对不同资源向不同人员授予不同权限 给Amazon EC2上运行的应用程序提供AWS资源的安全访问权限 多重身份验证（MFA） 可以给账户天假双重身份验证，以实现更高安全性。 联合登陆（联合身份） 可以允许在其他用户管理系统中提供的用户获取AWS账户的临时访问权限 身份信息可在AWS CloudTrail中记录 如果使用AWS CLoudTrail，则会收到对资源进行请求的人员信息 &amp;hellip; 使用IAM操作AWS资源 AWS Management Console 页面登录 AWS CLI操作 首先需要登陆AWS，使用aws configure, 参考链接 术语 IAM 资源： 存储在 IAM 中的用户、组、角色、策略和身份提供商对象。与其他 AWS 服务一样，可以在 IAM 中添加、编辑和删除资源。 IAM 身份： 用于标识和分组的 IAM 资源对象。可以将策略附加到 IAM 身份。其中包括用户、组和角色。 IAM 实体： AWS 用于进行身份验证的 IAM 资源对象。其中包括 IAM 用户和角色。 主体： 可请求对 AWS 资源执行操作的人员或应用程序。 IAM 中的权限和策略 IAM 用户是服务中的身份。当创建 IAM 用户时，他们无法访问账户中的任何资源，需要给他们授予权限。向用户授予权限的方法是创建基于身份的策略，附加到用户或用户所属组的策略。</description>
-    </item>
-    
-    <item>
-      <title>Readme</title>
-      <link>https://saberMomo.github.io/istio/readme/</link>
-      <pubDate>Wed, 14 Dec 2022 09:25:58 +0800</pubDate>
-      
-      <guid>https://saberMomo.github.io/istio/readme/</guid>
-      <description></description>
     </item>
     
   </channel>

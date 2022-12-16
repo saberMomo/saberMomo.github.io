@@ -1,0 +1,43 @@
+# nginx
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlb-sample-app
+  namespace: lin-test
+spec:
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 400%
+      maxUnavailable: 0
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: public.ecr.aws/nginx/nginx:1.21
+          ports:
+            - name: tcp
+              containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: lin-test
+  name: nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: nginx
