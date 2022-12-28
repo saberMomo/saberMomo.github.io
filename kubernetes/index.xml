@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on lin Blog Site</title>
+    <link>https://saberMomo.github.io/kubernetes/</link>
+    <description>Recent content in Kubernetes on lin Blog Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Dec 2022 21:42:50 +0800</lastBuildDate><atom:link href="https://saberMomo.github.io/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KubernetesInstall</title>
+      <link>https://saberMomo.github.io/kubernetes/kubernetesInstall/</link>
+      <pubDate>Wed, 28 Dec 2022 21:42:50 +0800</pubDate>
+      
+      <guid>https://saberMomo.github.io/kubernetes/kubernetesInstall/</guid>
+      <description>目录
+环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 环境配置 安装要求：
+安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置
+host1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux
+sudo setenforce 0 sudo sed -i --follow-symlinks &amp;#39;s/SELINUX=enforcing/SELINUX=disabled/g&amp;#39; /etc/sysconfig/selinux 关闭防火墙
+systemctl disable firewalld systemctl stop firewalld 关闭swap分区
+sudo sed -i &amp;#39;/swap/d&amp;#39; /etc/fstab sudo swapoff -a 设置内核参数
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 EOF sudo sysctl --system modprobe br_netfilter 修改host解析</description>
+    </item>
+    
+  </channel>
+</rss>

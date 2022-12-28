@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://saberMomo.github.io/kubernetes/</loc>
+    <lastmod>2022-12-28T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/kubernetes/kubernetesInstall/</loc>
+    <lastmod>2022-12-28T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/</loc>
+    <lastmod>2022-12-28T21:42:50+08:00</lastmod>
+  </url><url>
+    <loc>https://saberMomo.github.io/tags/</loc>
+  </url>
+</urlset>
