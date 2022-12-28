@@ -13,7 +13,9 @@
 
 
   <meta name="description" content="目录
-环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 环境配置 安装要求：
+前言 环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 前言 Containerd runtime的kubernetes环境搭建
+视屏地址：
+环境配置 安装要求：
 安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置
 host1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux
 sudo setenforce 0 sudo sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux 关闭防火墙
@@ -46,7 +48,9 @@ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables 
   />
   <meta property="og:site_name" content="lin Blog Site" />
   <meta property="og:description" content="目录
-环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 环境配置 安装要求：
+前言 环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 前言 Containerd runtime的kubernetes环境搭建
+视屏地址：
+环境配置 安装要求：
 安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置
 host1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux
 sudo setenforce 0 sudo sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux 关闭防火墙
@@ -70,7 +74,9 @@ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="KubernetesInstall" />
   <meta name="twitter:description" content="目录
-环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 环境配置 安装要求：
+前言 环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 前言 Containerd runtime的kubernetes环境搭建
+视屏地址：
+环境配置 安装要求：
 安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置
 host1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux
 sudo setenforce 0 sudo sed -i --follow-symlinks &#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39; /etc/sysconfig/selinux 关闭防火墙
@@ -87,8 +93,8 @@ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables 
       "name": "KubernetesInstall",
       "url" : "https://saberMomo.github.io/kubernetes/kubernetesInstall/",
       "headline": "KubernetesInstall",
-      "description": "目录\n环境配置 系统初始化 安装Containerd\/kubeadm\/kubelet master节点初始化 node节点初始化 环境配置 安装要求：\n安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置\nhost1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux\nsudo setenforce 0 sudo sed -i --follow-symlinks \u0027s\/SELINUX=enforcing\/SELINUX=disabled\/g\u0027 \/etc\/sysconfig\/selinux 关闭防火墙\nsystemctl disable firewalld systemctl stop firewalld 关闭swap分区\nsudo sed -i \u0027\/swap\/d\u0027 \/etc\/fstab sudo swapoff -a 设置内核参数\ncat \u003c\u003cEOF \u003e \/etc\/sysctl.d\/k8s.conf net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 EOF sudo sysctl --system modprobe br_netfilter 修改host解析",
-      "wordCount" : "247",
+      "description": "目录\n前言 环境配置 系统初始化 安装Containerd\/kubeadm\/kubelet master节点初始化 node节点初始化 前言 Containerd runtime的kubernetes环境搭建\n视屏地址：\n环境配置 安装要求：\n安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置\nhost1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux\nsudo setenforce 0 sudo sed -i --follow-symlinks \u0027s\/SELINUX=enforcing\/SELINUX=disabled\/g\u0027 \/etc\/sysconfig\/selinux 关闭防火墙\nsystemctl disable firewalld systemctl stop firewalld 关闭swap分区\nsudo sed -i \u0027\/swap\/d\u0027 \/etc\/fstab sudo swapoff -a 设置内核参数\ncat \u003c\u003cEOF \u003e \/etc\/sysctl.d\/k8s.conf net.bridge.bridge-nf-call-ip6tables = 1 net.bridge.bridge-nf-call-iptables = 1 net.ipv4.ip_forward = 1 EOF sudo sysctl --system modprobe br_netfilter 修改host解析",
+      "wordCount" : "252",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -492,6 +498,10 @@ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables 
 <ul>
 <li><a
   class="gdoc-markdown__link"
+  href="#%e5%89%8d%e8%a8%80"
+>前言</a></li>
+<li><a
+  class="gdoc-markdown__link"
   href="#%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae"
 >环境配置</a>
 <ul>
@@ -514,6 +524,22 @@ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf net.bridge.bridge-nf-call-ip6tables 
   href="#node%e8%8a%82%e7%82%b9%e5%88%9d%e5%a7%8b%e5%8c%96"
 >node节点初始化</a></li>
 </ul>
+<div class="gdoc-page__anchorwrap">
+    <h1 id="前言">
+        前言
+        <a data-clipboard-text="https://saberMomo.github.io/kubernetes/kubernetesInstall/#前言" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 前言" aria-label="Anchor to: 前言" href="#%e5%89%8d%e8%a8%80">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h1>
+</div>
+<p>Containerd runtime的kubernetes环境搭建</p>
+<p><img
+  src="http://i0.hdslb.com/bfs/archive/a97029d7436f99ca1bd316a4177425002b58af4a.jpg"
+  alt=""
+  
+/></p>
+<p>视屏地址：</p>
+<iframe src="//player.bilibili.com/player.html?aid=691926218&amp;cid=940588739&amp;page=1" style="min-height:400px;width:100%" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 <div class="gdoc-page__anchorwrap">
     <h1 id="环境配置">
         环境配置

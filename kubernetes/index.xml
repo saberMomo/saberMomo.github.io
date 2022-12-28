@@ -14,7 +14,9 @@
       
       <guid>https://saberMomo.github.io/kubernetes/kubernetesInstall/</guid>
       <description>目录
-环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 环境配置 安装要求：
+前言 环境配置 系统初始化 安装Containerd/kubeadm/kubelet master节点初始化 node节点初始化 前言 Containerd runtime的kubernetes环境搭建
+视屏地址：
+环境配置 安装要求：
 安装虚拟机，安装操作系统CentOS7.x 硬件配置：2GB或更多RAM，2个CPU或更多CPU，硬盘30GB或更多 集群中的所有机器之间网络互通 可以访问互联网 要拉取镜像 禁止swap分区 角色 IP规划 master 192.168.1.160 node01 192.168.1.161 node02 192.168.1.162 系统初始化 环境变量设置
 host1=192.168.1.160 host2=192.168.1.161 host3=192.168.1.162 关闭selinux
 sudo setenforce 0 sudo sed -i --follow-symlinks &amp;#39;s/SELINUX=enforcing/SELINUX=disabled/g&amp;#39; /etc/sysconfig/selinux 关闭防火墙
